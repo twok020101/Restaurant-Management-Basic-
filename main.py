@@ -15,8 +15,6 @@ mydb = mc.connect(
 )
 
 conn=mydb.cursor()
-
-
 def first_time():
     if os.path.exists("first_time.txt"):
         return True
@@ -33,7 +31,6 @@ def tables():
             mydb.commit()
         except Exception as e:
             print(e)
-
 if __name__ == '__main__':
     check=first_time()
     if check==False:
