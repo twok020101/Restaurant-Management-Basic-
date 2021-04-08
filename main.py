@@ -25,8 +25,6 @@ def first_time():
             file.write("Login in success")
         file.close()
         return False
-
-
 def tables():
     no_of_tables=int(input("Enter number of tables: "))
     for i in range(no_of_tables):
@@ -40,12 +38,10 @@ if __name__ == '__main__':
     check=first_time()
     if check==False:
         tables()
-
     token_no=0
     conn.execute(f"select MAX(billing_id) from billing")
     b_id=(conn.fetchone())[0]
     while True:
-
         print("1. New customer \n 2.Orders \n 3. Billing \n 4. Show all customers \n 5. End game ")
         x=int(input("Enter choice: "))
         if x==1:
@@ -80,7 +76,6 @@ if __name__ == '__main__':
                 password="1234",
                 database="restaurant"
             )
-
             conn=mydb.cursor()
             try:
                 conn.execute(f"select * from customer_present")
@@ -91,6 +86,5 @@ if __name__ == '__main__':
         elif x==5:
             if(checker.check(b_id)): 
                 break
-
         else:
             break
