@@ -13,11 +13,9 @@ conn = db.cursor(buffered=True)
 
 
 def check(b_id):
-
     try:
         conn.execute('select table_no, vacancy from table_info')
         c = conn.fetchall()
-
         for i in c:
             if i[1] != 1:
                 print('entered')
@@ -37,6 +35,5 @@ def check(b_id):
 
             else:
                 pass
-
     except Exception as e:
         print(e)
